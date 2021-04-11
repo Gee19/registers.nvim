@@ -346,9 +346,12 @@ local function registers(mode)
     -- Keep track of the mode that's used to open the popup
     invocation_mode = mode
 
-	open_window()
-	set_mappings()
-	update_view()
+    -- Doesn't work
+    -- vim.fn["lessspace#TemporaryDisableBegin"]()
+    open_window()
+    set_mappings()
+    update_view()
+    vim.fn["lessspace#TemporaryDisableEnd"]()
 end
 
 -- Public functions
